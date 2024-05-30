@@ -37,7 +37,7 @@ export default function Dashboard() {
           <Table stickyHeader aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Image</TableCell>
+                {/* <TableCell>Image</TableCell> */}
                 <TableCell>Name</TableCell>
                 <TableCell>Description</TableCell>
                 <TableCell>Department ID</TableCell>
@@ -46,7 +46,7 @@ export default function Dashboard() {
             <TableBody>
               {data.map((spec) => (
                 <TableRow key={spec.id}>
-                  <TableCell>
+                  {/* <TableCell>
                     <img
                       src={spec.image_url}
                       alt={spec.name}
@@ -56,7 +56,7 @@ export default function Dashboard() {
                         borderRadius: "50%",
                       }}
                     />
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell>{spec.name}</TableCell>
                   <TableCell>{spec.description}</TableCell>
                   <TableCell>{spec.department_id}</TableCell>

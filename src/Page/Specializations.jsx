@@ -37,7 +37,7 @@ export default function Dashboard() {
           <Table stickyHeader aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Image URL</TableCell>
+                <TableCell>Image</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell>Description</TableCell>
                 <TableCell>Department ID</TableCell>

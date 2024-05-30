@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SideBar from "../Component/SideBar";
+import SideBar from "../Components/SideBar";
 import Box from "@mui/material/Box";
 import {
   TableContainer,
@@ -37,7 +37,6 @@ export default function Dashboard() {
           <Table stickyHeader aria-label="simple table">
             <TableHead>
               <TableRow>
-                {/* <TableCell>Image</TableCell> */}
                 <TableCell>Name</TableCell>
                 <TableCell>Description</TableCell>
                 <TableCell>Department ID</TableCell>
@@ -46,17 +45,6 @@ export default function Dashboard() {
             <TableBody>
               {data.map((spec) => (
                 <TableRow key={spec.id}>
-                  {/* <TableCell>
-                    <img
-                      src={spec.image_url}
-                      alt={spec.name}
-                      style={{
-                        width: "50px",
-                        height: "50px",
-                        borderRadius: "50%",
-                      }}
-                    />
-                  </TableCell> */}
                   <TableCell>{spec.name}</TableCell>
                   <TableCell>{spec.description}</TableCell>
                   <TableCell>{spec.department_id}</TableCell>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SideBar from "../Component/SideBar";
+import SideBar from "../Components/SideBar";
 import Box from "@mui/material/Box";
 import {
   TableContainer,
@@ -9,16 +9,20 @@ import {
   TableRow,
   TableCell,
   Paper,
+  Button,
 } from "@mui/material";
+import Creater from "../Components/Creater";
 
 export default function Dashboard() {
   const [data, setData] = useState([]);
 
+  const [openModal, setOpenModal] = useState(false);
+
   useEffect(() => {
-    fetch("https://admin.dennic.uz/v1/user/?Page=1&Limit=10")
+    fetch("https://admin.dennic.uz/v1/user/?Page=1&Limit=30")
       .then((res) => res.json())
       .then((json) => {
-        console.log(json); // Log the response to check its structure
+        console.log(json);
         if (json.users && Array.isArray(json.users)) {
           setData(json.users);
         } else {
@@ -36,6 +40,12 @@ export default function Dashboard() {
     <Box sx={{ display: "flex" }}>
       <SideBar />
       <Box component="main" sx={{ flexGrow: 1, p: 3, marginTop: "65px" }}>
+        <div className="chap">
+          <Button onClick={() => setOpenModal(true)} variant="contained">
+            Add
+          </Button>
+          <Creater openModal={openModal} setOpenModal={setOpenModal} />
+        </div>
         <TableContainer sx={{ maxHeight: "550px" }} component={Paper}>
           <Table stickyHeader aria-label="simple table">
             <TableHead>

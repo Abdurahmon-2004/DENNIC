@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SideBar from "../Component/SideBar";
+import SideBar from "../Components/SideBar";
 import Box from "@mui/material/Box";
 import {
   TableContainer,

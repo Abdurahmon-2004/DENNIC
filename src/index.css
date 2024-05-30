@@ -19,3 +19,15 @@ code {
   height: 50px;
   border-radius: 50%;
 }
+.chap {
+  justify-content: end;
+  display: flex;
+}
+.chap button {
+  width: 100px;
+  height: 50px;
+  font-size: 17px;
+  border-color: #c2c7cd;
+  border-radius: 8px;
+  cursor: pointer;
+}

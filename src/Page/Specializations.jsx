@@ -15,7 +15,7 @@ export default function Dashboard() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://admin.dennic.uz/v1/specializations/?Page=1&Limit=10")
+    fetch("https://admin.dennic.uz/v1/specialization/?Page=1&Limit=10")
       .then((res) => res.json())
       .then((json) => {
         console.log(json); // Log the response to check its structure
@@ -37,18 +37,15 @@ export default function Dashboard() {
           <Table stickyHeader aria-label="simple table">
             <TableHead>
               <TableRow>
+                <TableCell>Image URL</TableCell>
                 <TableCell>Name</TableCell>
                 <TableCell>Description</TableCell>
                 <TableCell>Department ID</TableCell>
-                <TableCell>Image URL</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {data.map((spec) => (
                 <TableRow key={spec.id}>
-                  <TableCell>{spec.name}</TableCell>
-                  <TableCell>{spec.description}</TableCell>
-                  <TableCell>{spec.department_id}</TableCell>
                   <TableCell>
                     <img
                       src={spec.image_url}
@@ -60,6 +57,9 @@ export default function Dashboard() {
                       }}
                     />
                   </TableCell>
+                  <TableCell>{spec.name}</TableCell>
+                  <TableCell>{spec.description}</TableCell>
+                  <TableCell>{spec.department_id}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
